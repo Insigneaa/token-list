@@ -1,0 +1,20 @@
+{
+  "name": "Solana Token List",
+  "tags": {
+    "defi": {
+      "name": "DeFi",
+      "description": "Decentralized Finance"
+    }
+  },
+  "tokens": [
+    {
+      "chainId": 101,
+      "address": "Fg6PaFpoGXkYsidMpWFKTxGKfYbC8HkEo2ETz7uHQfud",
+      "symbol": "ISN",
+      "name": "Insignea",
+      "decimals": 9,
+      "logoURI": "https://github.com/Insigneaa/token-list/blob/560658b3ee8f4472b3f2d7559b39ecc8bb0c10a7/Insignea.png",
+      "tags": ["defi"]
+    }
+  ]
+}
