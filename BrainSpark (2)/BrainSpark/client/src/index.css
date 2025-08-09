@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0 0% 0%);
+  --foreground: hsl(0 0% 100%);
+  --card: hsl(0 0% 0%);
+  --card-foreground: hsl(0 0% 100%);
+  --popover: hsl(0 0% 0%);
+  --popover-foreground: hsl(0 0% 100%);
+  --primary: hsl(185 100% 50%);
+  --primary-foreground: hsl(0 0% 0%);
+  --secondary: hsl(270 100% 37%);
+  --secondary-foreground: hsl(0 0% 100%);
+  --muted: hsl(0 0% 20%);
+  --muted-foreground: hsl(0 0% 60%);
+  --accent: hsl(120 100% 40%);
+  --accent-foreground: hsl(0 0% 0%);
+  --destructive: hsl(0 84% 60%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(0 0% 20%);
+  --input: hsl(0 0% 10%);
+  --ring: hsl(185 100% 50%);
+  --chart-1: hsl(185 100% 50%);
+  --chart-2: hsl(270 100% 37%);
+  --chart-3: hsl(120 100% 40%);
+  --chart-4: hsl(51 100% 50%);
+  --chart-5: hsl(336 100% 50%);
+  --sidebar: hsl(0 0% 0%);
+  --sidebar-foreground: hsl(0 0% 100%);
+  --sidebar-primary: hsl(185 100% 50%);
+  --sidebar-primary-foreground: hsl(0 0% 0%);
+  --sidebar-accent: hsl(270 100% 37%);
+  --sidebar-accent-foreground: hsl(0 0% 100%);
+  --sidebar-border: hsl(0 0% 20%);
+  --sidebar-ring: hsl(185 100% 50%);
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Georgia', serif;
+  --font-mono: 'Menlo', monospace;
+  --font-orbitron: 'Orbitron', monospace;
+  --radius: 1.3rem;
+  
+  /* NEUROX Custom Colors */
+  --neon-cyan: hsl(185 100% 50%);
+  --neon-purple: hsl(270 100% 37%);
+  --neon-green: hsl(120 100% 25%);
+  --neon-pink: hsl(336 100% 50%);
+  --neural-gold: hsl(51 100% 50%);
+  --glass-bg: hsl(0 0% 100% / 0.05);
+  --glass-border: hsl(0 0% 100% / 0.1);
+}
+
+.dark {
+  --background: hsl(0 0% 0%);
+  --foreground: hsl(0 0% 100%);
+  --card: hsl(0 0% 4%);
+  --card-foreground: hsl(0 0% 90%);
+  --popover: hsl(0 0% 0%);
+  --popover-foreground: hsl(0 0% 100%);
+  --primary: hsl(185 100% 50%);
+  --primary-foreground: hsl(0 0% 0%);
+  --secondary: hsl(270 100% 37%);
+  --secondary-foreground: hsl(0 0% 100%);
+  --muted: hsl(0 0% 10%);
+  --muted-foreground: hsl(0 0% 60%);
+  --accent: hsl(120 100% 40%);
+  --accent-foreground: hsl(0 0% 0%);
+  --destructive: hsl(0 84% 60%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(0 0% 15%);
+  --input: hsl(0 0% 10%);
+  --ring: hsl(185 100% 50%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground overflow-x-hidden;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+  }
+  
+  .neon-text {
+    text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 20px currentColor;
+  }
+  
+  .neon-glow {
+    box-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+  }
+  
+  .neural-connection {
+    position: absolute;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+    animation: neural-pulse 4s ease-in-out infinite;
+  }
+  
+  .particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: radial-gradient(circle, var(--neon-cyan), transparent);
+    border-radius: 50%;
+    animation: float 8s ease-in-out infinite;
+  }
+}
+
+@layer utilities {
+  .font-orbitron {
+    font-family: var(--font-orbitron);
+  }
+  
+  .text-neon-cyan {
+    color: var(--neon-cyan);
+  }
+  
+  .text-neon-purple {
+    color: var(--neon-purple);
+  }
+  
+  .text-neon-green {
+    color: var(--neon-green);
+  }
+  
+  .text-neon-pink {
+    color: var(--neon-pink);
+  }
+  
+  .text-neural-gold {
+    color: var(--neural-gold);
+  }
+  
+  .bg-neon-cyan {
+    background-color: var(--neon-cyan);
+  }
+  
+  .bg-neon-purple {
+    background-color: var(--neon-purple);
+  }
+  
+  .bg-neon-green {
+    background-color: var(--neon-green);
+  }
+  
+  .bg-neon-pink {
+    background-color: var(--neon-pink);
+  }
+  
+  .bg-neural-gold {
+    background-color: var(--neural-gold);
+  }
+  
+  .border-neon-cyan {
+    border-color: var(--neon-cyan);
+  }
+  
+  .border-neon-purple {
+    border-color: var(--neon-purple);
+  }
+  
+  .border-neon-green {
+    border-color: var(--neon-green);
+  }
+  
+  .border-neon-pink {
+    border-color: var(--neon-pink);
+  }
+  
+  .border-neural-gold {
+    border-color: var(--neural-gold);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes neural-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { 
+    box-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor; 
+  }
+  50% { 
+    box-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor; 
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2) rotate(180deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes matrix-rain {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+@keyframes hologram-flicker {
+  0%, 100% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+  25% {
+    opacity: 0.8;
+    filter: brightness(1.2) hue-rotate(10deg);
+  }
+  50% {
+    opacity: 0.9;
+    filter: brightness(0.8) hue-rotate(-5deg);
+  }
+  75% {
+    opacity: 0.95;
+    filter: brightness(1.1) hue-rotate(5deg);
+  }
+}
+
+@keyframes data-stream {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-neural-pulse {
+  animation: neural-pulse 4s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.8s ease-out;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.6s ease-out;
+}
+
+.animate-matrix-rain {
+  animation: matrix-rain 3s linear infinite;
+}
+
+.animate-hologram {
+  animation: hologram-flicker 4s ease-in-out infinite;
+}
+
+.animate-data-stream {
+  animation: data-stream 2s ease-in-out infinite;
+}
+
+.hover-lift {
+  transition: all 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 245, 255, 0.3);
+}
+
+.interactive-glow:hover {
+  animation: glow-pulse 1s ease-in-out infinite;
+}
+
+.neural-grid {
+  background-image: 
+    linear-gradient(rgba(0, 245, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 245, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.hologram-effect {
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(0, 245, 255, 0.1) 50%,
+    transparent 70%
+  );
+  background-size: 200% 200%;
+  animation: hologram-flicker 3s ease-in-out infinite;
+}
+
+.animate-scroll {
+  animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
